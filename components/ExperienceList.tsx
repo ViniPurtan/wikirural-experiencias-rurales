@@ -21,10 +21,10 @@ export const ExperienceList: React.FC<ExperienceListProps> = ({ experiences }) =
     }
 
     return (
-        <div className="container mx-auto p-4 md:p-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {experiences.map(exp => (
-                    <ExperienceCard key={exp.id} experience={exp} />
+        <div className="container mx-auto p-4 md:p-6 fade-in">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                {experiences.map((exp, index) => (
+                    <ExperienceCard key={exp.id} experience={exp} index={index} />
                 ))}
             </div>
         </div>

@@ -8,4 +8,229 @@ body {
   padding: 0;
 }
 
-/* Estilos adicionales si son necesarios */
+/* ✨ ANIMACIONES Y TRANSICIONES ESPECTACULARES ✨ */
+
+/* Transiciones globales suaves */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animación de entrada para tarjetas */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animación de pulso para elementos interactivos */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Clases de animación */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-in {
+  animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Animación de skeleton loader */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Efectos de glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animaciones de stagger para listas */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Botones con efectos avanzados */
+.btn-magical {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #0d9488, #14b8a6);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-magical::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-magical:hover::before {
+  left: 100%;
+}
+
+.btn-magical:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(13, 148, 136, 0.3);
+}
+
+/* 🌙 MODO OSCURO ESPECTACULAR 🌙 */
+
+/* Variables de color para modo oscuro */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7fafc;
+  --bg-card: #ffffff;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --border-color: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --bg-card: #2d3748;
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #a0aec0;
+  --border-color: #4a5568;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Aplicar variables */
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos específicos para modo oscuro */
+.dark .bg-white {
+  background-color: var(--bg-card) !important;
+}
+
+.dark .text-gray-900 {
+  color: var(--text-primary) !important;
+}
+
+.dark .text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+.dark .text-gray-500 {
+  color: var(--text-muted) !important;
+}
+
+.dark .border-gray-200 {
+  border-color: var(--border-color) !important;
+}
+
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl {
+  box-shadow: 0 4px 6px -1px var(--shadow), 0 2px 4px -1px var(--shadow) !important;
+}
+
+/* Efectos glassmorphism para modo oscuro */
+.dark .glass {
+  background: rgba(45, 55, 72, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Skeleton loader para modo oscuro */
+.dark .skeleton {
+  background: linear-gradient(90deg, #4a5568 25%, #2d3748 50%, #4a5568 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Hover effects para modo oscuro */
+.dark .hover-lift:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Transiciones suaves para cambio de tema */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efectos especiales para scroll */
+.dark::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.dark::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 4px;
+}
+
+.dark::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}

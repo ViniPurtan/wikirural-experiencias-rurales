@@ -3,6 +3,8 @@ import { Header } from './components/Header';
 import { FiltersPanel } from './components/FiltersPanel';
 import { ExperienceList } from './components/ExperienceList';
 import { MapView } from './components/MapView';
+import { LoadingSpinner, SkeletonCard } from './components/LoadingSpinner';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { Experience, Filters, Province, Category } from './types';
 import { fetchExperiences } from './services/experienceService';
 import { MAX_PRICE, ICONS } from './constants';
@@ -98,11 +100,19 @@ const App: React.FC = () => {
 
     const renderContent = () => {
         if (loading) {
-            return (
-                <div className="flex justify-center items-center h-[calc(100vh-200px)]">
-                    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-teal-500"></div>
-                </div>
-            );
+            if (viewMode === 'list') {
+                return (
+                    <div className="container mx-auto p-4 md:p-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                            {Array.from({ length: 8 }).map((_, i) => (
+                                <SkeletonCard key={i} />
+                            ))}
+                        </div>
+                    </div>
+                );
+            } else {
+                return <LoadingSpinner size="lg" text="Cargando mapa..." />;
+            }
         }
 
         if (viewMode === 'list') {
@@ -110,8 +120,6 @@ const App: React.FC = () => {
         }
         
         if (viewMode === 'map') {
-            // This height calculation is an approximation for a full-viewport map view.
-            // 100vh - header_height(65px) - filters_panel_height(~135px)
             return (
                 <div className="flex-grow h-[calc(100vh-200px)] bg-gray-300">
                     <MapView experiences={filteredExperiences} />
@@ -121,22 +129,24 @@ const App: React.FC = () => {
     };
     
     return (
-        <div className="min-h-screen flex flex-col">
-            <Header />
-            <FiltersPanel 
-                filters={filters}
-                onSearchChange={handleSearchChange}
-                onProvinceChange={handleProvinceChange}
-                onCategoryChange={handleCategoryChange}
-                onPriceChange={handlePriceChange}
-                onResetFilters={handleResetFilters}
-                resultsCount={filteredExperiences.length} 
-            />
-            <main className="flex-grow">
-                {renderContent()}
-            </main>
-            <ViewModeToggle viewMode={viewMode} setViewMode={setViewMode} />
-        </div>
+        <ThemeProvider>
+            <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+                <Header />
+                <FiltersPanel 
+                    filters={filters}
+                    onSearchChange={handleSearchChange}
+                    onProvinceChange={handleProvinceChange}
+                    onCategoryChange={handleCategoryChange}
+                    onPriceChange={handlePriceChange}
+                    onResetFilters={handleResetFilters}
+                    resultsCount={filteredExperiences.length} 
+                />
+                <main className="flex-grow">
+                    {renderContent()}
+                </main>
+                <ViewModeToggle viewMode={viewMode} setViewMode={setViewMode} />
+            </div>
+        </ThemeProvider>
     );
 };
 
