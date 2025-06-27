@@ -10,8 +10,15 @@ Una plataforma web interactiva para descubrir y explorar experiencias rurales au
 - 🎯 **Categorías Diversas**: Aventura, Gastronomía, Cultura y Naturaleza
 - 🏞️ **Experiencias Auténticas**: Enfoque especial en la provincia de Castellón
 - ⚡ **Rendimiento Optimizado**: Carga rápida y navegación fluida
+- 🌙 **Modo Oscuro/Claro**: Sistema completo de temas con detección automática
+- ❤️ **Sistema de Favoritos**: Guarda tus experiencias preferidas
+- ✨ **Animaciones Suaves**: Transiciones y efectos visuales espectaculares
+- 🎯 **Filtros Avanzados**: Panel expandible con filtros rápidos y múltiples criterios
+- 📱 **Estados de Carga**: Skeleton loaders y spinners personalizados
 
-## 🚀 Demo
+## 🚀 Demo en Vivo
+
+**🌐 [Ver la aplicación en vivo](https://vinipurtan.github.io/wikirural-experiencias-rurales/)**
 
 La aplicación incluye más de 120 experiencias rurales simuladas distribuidas por toda España, con especial énfasis en la provincia de Castellón que cuenta con experiencias únicas como:
 
