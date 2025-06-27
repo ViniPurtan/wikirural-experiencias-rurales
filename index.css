@@ -1,0 +1,11 @@
+/* Estilos básicos para la aplicación WikiRural */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos adicionales si son necesarios */
