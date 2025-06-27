@@ -4,17 +4,40 @@ Una plataforma web interactiva para descubrir y explorar experiencias rurales au
 
 ## ✨ Características
 
-- 🗺️ **Mapa Interactivo**: Visualiza experiencias rurales en un mapa dinámico con Leaflet
-- 🔍 **Filtros Avanzados**: Busca por provincia, categoría, rango de precios y términos específicos
-- 📱 **Diseño Responsive**: Optimizado para dispositivos móviles y escritorio
-- 🎯 **Categorías Diversas**: Aventura, Gastronomía, Cultura y Naturaleza
-- 🏞️ **Experiencias Auténticas**: Enfoque especial en la provincia de Castellón
-- ⚡ **Rendimiento Optimizado**: Carga rápida y navegación fluida
-- 🌙 **Modo Oscuro/Claro**: Sistema completo de temas con detección automática
-- ❤️ **Sistema de Favoritos**: Guarda tus experiencias preferidas
-- ✨ **Animaciones Suaves**: Transiciones y efectos visuales espectaculares
-- 🎯 **Filtros Avanzados**: Panel expandible con filtros rápidos y múltiples criterios
-- 📱 **Estados de Carga**: Skeleton loaders y spinners personalizados
+### 🎨 **Interfaz y Experiencia de Usuario**
+- 🌓 **Modo Oscuro Completo**: Toggle animado con detección automática de preferencias del sistema
+- 🔄 **Vista Dual**: Alterna entre vista de tarjetas y mapa interactivo con botón flotante
+- ❤️ **Sistema de Favoritos**: Marca experiencias favoritas con persistencia local
+- ✨ **Animaciones Espectaculares**: Efectos de entrada escalonados, hover transforms y glassmorphism
+- 📱 **Diseño Ultra-Responsive**: Optimizado para móvil, tablet y escritorio con grid adaptativo
+
+### 🔍 **Filtrado y Búsqueda Avanzada**
+- 🎯 **Búsqueda en Tiempo Real**: Filtro de texto instantáneo por nombre y categoría
+- 🏛️ **Filtro por Provincias**: Todas las 52 provincias españolas disponibles
+- 🎪 **Categorías Temáticas**: Aventura 🏔️, Gastronomía 🍷, Cultura 🏛️, Naturaleza 🌿
+- 💰 **Rango de Precios**: Slider dinámico hasta 300€ con experiencias gratuitas
+- 📊 **Contador de Resultados**: Muestra experiencias encontradas en tiempo real
+- 🔥 **Reset Rápido**: Limpia todos los filtros con un clic
+
+### 🗺️ **Mapa Interactivo Avanzado**
+- 🌍 **Leaflet Premium**: Mapa interactivo con tiles CARTO de alta calidad
+- 📍 **Marcadores Inteligentes**: Popups ricos con imagen, precio e información completa
+- 🎯 **Auto-ajuste**: El mapa se centra automáticamente en las experiencias filtradas
+- 🇪🇸 **Vista de España**: Centrado en España con coordenadas geográficas reales
+
+### 🎪 **Experiencias y Contenido**
+- 🏞️ **120+ Experiencias Auténticas**: Dataset completo con experiencias reales
+- 🏰 **Especialización Castellón**: 40 experiencias únicas de la provincia
+- 🌍 **Cobertura Nacional**: 80 experiencias distribuidas por toda España
+- 💎 **Calidad Premium**: Descripciones auténticas y coordenadas geográficas precisas
+- 🆓 **Variedad de Precios**: Desde experiencias gratuitas hasta premium
+
+### ⚡ **Rendimiento y Tecnología**
+- 🚀 **React 19 + TypeScript**: Tecnología de vanguardia con tipado completo
+- ⚡ **Vite Optimizado**: Desarrollo ultrarrápido y builds optimizados
+- 🧠 **Gestión de Memoria**: useMemo y useCallback para operaciones costosas
+- 🎭 **Estados de Carga**: Skeletons animados y spinners con texto personalizado
+- ♿ **Accesibilidad**: ARIA labels y navegación por teclado completa
 
 ## 🚀 Demo en Vivo
 
